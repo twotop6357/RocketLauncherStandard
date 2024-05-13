@@ -16,7 +16,12 @@ public class RocketController : MonoBehaviour
     }
 
     // TODO : OnMove 구현
-    // private void OnMove...
+    public void OnMove(InputValue value)
+    {
+        _movementDirection = value.Get<Vector2>().normalized;
+        _isMoving = true;
+        _rocketMovement.ApplyMovement(_movementDirection);
+    }
 
 
     // TODO : OnBoost 구현
